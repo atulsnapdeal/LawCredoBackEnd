@@ -46,7 +46,34 @@
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
         </dependency>
-    </dependencies>
+    
+    
+    <!-- Hibernate maven dependency -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.0.1.Final</version>
+        </dependency>
+        
+          <dependency>
+            <groupId>org.hibernate.common</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>4.0.1.Final</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.10</version>
+        </dependency>
+        
+     <dependency>
+	<groupId>com.thetransactioncompany</groupId>
+	<artifactId>cors-filter</artifactId>
+	<version>2.5</version>
+</dependency>
+    
+      </dependencies>
     
     <properties>
         <jersey.version>2.16</jersey.version>

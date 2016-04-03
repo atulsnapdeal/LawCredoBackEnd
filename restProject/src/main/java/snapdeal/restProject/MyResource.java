@@ -8,8 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-/** Example resource class hosted at the URI path "/myresource"
- */
+import dao.ObjectToDataBase;
+
 @Path("/myresource")
 public class MyResource {
     
@@ -37,11 +37,13 @@ public class MyResource {
     
     @POST
     @Path("/appointmentService")
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Appointment saveAppointmentToDB(Appointment appointment)
-    { System.out.println("inAppointment");
+    { 
     	
-    	return appointment;
-    }
+    System.out.println("inAppointment");
+    ObjectToDataBase otd = new ObjectToDataBase();
+    Appointment appointmentSaved = (Appointment)otd.saveObjectToDatabase(appointment);
+    return appointmentSaved;
+}
 }

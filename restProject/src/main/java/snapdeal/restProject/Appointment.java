@@ -1,11 +1,27 @@
 package snapdeal.restProject;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.*;
 
-@XmlRootElement
+
+@Entity
+@Table(name = "appointment")
 public class Appointment {
 	
+	   @Id
+	    @GeneratedValue
+	    private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	@Column(name = "name")
 	String name;
+	
+	@Column(name = "address")
 	String address;
 	
 	  public Appointment() {
